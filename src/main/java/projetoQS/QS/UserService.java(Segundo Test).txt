@@ -1,0 +1,17 @@
+package com.example.aula;
+import java.util.List;
+import java.util.ArrayList;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+	List <User> users = new ArrayList <>  ();
+	
+	public List<User> create (User user) {
+		if (users.contains(user))
+			throw new RuntimeException();
+					
+		users.add(user);
+		return users;
+	}
+}
